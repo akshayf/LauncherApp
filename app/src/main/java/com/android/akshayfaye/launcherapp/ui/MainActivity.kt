@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.akshayfaye.launcherapp.R
 import com.android.akshayfaye.launcherapp.receivers.LauncherBroadcast
-import com.android.akshayfaye.launcherapp.utility.ACTION_AIRPLANE_MODE
-import com.android.akshayfaye.launcherapp.utility.ACTION_WIFI_STATE_CHANGED
+import com.android.akshayfaye.launcherapp.utility.ACTION_BROADCAST_CREATE
+import com.android.akshayfaye.launcherapp.utility.ACTION_BROADCAST_REFRESH
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val intentFilter = IntentFilter()
-        intentFilter.addAction(ACTION_AIRPLANE_MODE)
-        intentFilter.addAction(ACTION_WIFI_STATE_CHANGED)
+        intentFilter.addAction(ACTION_BROADCAST_CREATE)
+        intentFilter.addAction(ACTION_BROADCAST_REFRESH)
 
         registerReceiver(launcherBroadcast, intentFilter)
     }
